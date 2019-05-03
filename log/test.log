@@ -1,0 +1,38 @@
+  [1m[35m (135.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "NetStory_test"[0m
+  [1m[35m (400.0ms)[0m  [1m[35mCREATE DATABASE "NetStory_test" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "articles" ("id" bigserial primary key, "design_id" integer, "title" text, "body" text, "cover" character varying, "year_id" integer, "published" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "pic" character varying, "folder_id" integer, "partial_name" character varying, "preview_partial" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "attachmennts" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "attachmennts" ("id" bigserial primary key, "type" character varying, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "cover" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "folders" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "folders" ("id" bigserial primary key, "type" character varying, "name" character varying, "icon" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "parent_id" integer, "partial_name" character varying, "same_window" boolean DEFAULT FALSE)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "spams" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "spams" ("id" bigserial primary key, "image" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190321110051)[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190204142406),
+(20190204142227),
+(20190225135114),
+(20190304051105),
+(20181117212413),
+(20181119135029),
+(20190318135301),
+(20181117213350),
+(20181121140547),
+(20190204140811),
+(20181117213215);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-03-25 08:49:13.302240"], ["updated_at", "2019-03-25 08:49:13.302240"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

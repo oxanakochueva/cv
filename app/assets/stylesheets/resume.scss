@@ -1,0 +1,114 @@
+@font-face {
+  font-family: 'Aeroport';
+  src: local('Aeroport Medium'), local('Aeroport Medium'),
+       url("Aeroport Medium") format('embedded-opentype'),
+       url("AeroportMedium.woff") format('woff');
+       font-weight: normal;
+font-style: normal;
+}
+
+body {
+  background: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  /* cursor:url("fakeBall.png"), auto; */
+
+  .resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 870px;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    .hi {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .underline {
+      border-bottom: 5px solid #001DFF;
+      margin: 20px 0;
+      width: auto;
+    }
+
+    .red {
+      border-bottom: 5px solid #FF0000;
+      margin-left: 0.15em;
+    }
+
+    p {
+      font-size: 40px;
+      line-height: 45px;
+      font-family: 'Aeroport';
+    }
+
+    .photo {
+      width: 400px;
+      height: 206px;
+      background-image: url("photo.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 100px auto;
+      border: 2px solid #000000;
+      filter: grayscale(1);
+      cursor: pointer;
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    .skills {
+      .underline {
+        width: 168px;
+
+        &:nth-child(4) {
+          margin-top: 100px;
+        }
+      }
+
+      .column {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+
+        p.can {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100px;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 100px 0;
+
+      p {
+        display: flex;
+        justify-content: space-around;
+        margin-right: 35px;
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: #000000;
+
+          &:hover {
+            color: #FF0000;
+          }
+        }
+
+        &:hover {
+          border-bottom: 5px solid #FF0000;
+        }
+      }
+    }
+  }
+}
